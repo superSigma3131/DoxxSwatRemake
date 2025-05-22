@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustex Remake - Rust в Майнкрафт</title>
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Rustex Remake",
+      "alternateName" : "Rustex",
+      "url" : "https://rustexremake.org/"
+    }
+	</script>
+	<script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+	<meta name="description" content="Rustex Remake — проект, нацеленный на перенос игры Rust в кубический мир Minecraft!">
+	<meta name="keywords" content="rustex remake, проходка, растекс ремейк, rustex, rustme, раст в майнкрафт, растекс проходка, rustex remake скачать, rustex remake ip">
+	<meta content="RUSTEX REMAKE" name="copyright" lang="en">
+    <script src="turnstile/v0/g/6fab0cec561d/api.js?onload=onloadTurnstileCallback" defer=""></script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	   m[i].l=1*new Date();
+	   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+	   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	   ym(97821313, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true,
+			webvisor:true
+	   });
+	</script>
+	<noscript><div><img src="watch/97821313" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PXNBBHSZ');</script>
+	<!-- End Google Tag Manager -->
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXNBBHSZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+    <link href="css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #212121;
+            color: #e0e0e0;
+        }
+        header {
+            width: 100%;
+            height: 300px;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(33, 33, 33, 1));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1;
+            text-align: center;
+            margin: 0;
+        }
+        .title-word {
+            display: inline-block;
+            text-transform: capitalize;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(to bottom, #212121, #2c2c2c);
+        }
+        .button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+		.inverted-button {
+			box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+		}
+        .button:hover {
+            background-color: #ff8e8e;
+            transform: scale(1.05);
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .social-button:hover {
+            transform: scale(1.05);
+        }
+        .discord { background-color: #7289DA; }
+        .vk { background-color: #4a76a8; }
+        .youtube { background-color: #FF0000; }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin: 0.5rem 0;
+        }
+        footer .legal-info {
+            font-size: 0.8rem;
+            color: #999;
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .modal {
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border: none;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: #e0e0e0;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .modal-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .price {
+            float: right;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .modal-content hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .modal-content input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            background-color: #333;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .modal-content input[type="text"]:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+        .checkbox-group {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .red-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .red-link:hover {
+            color: #ff8e8e;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .buy-button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #ff8e8e;
+        }
+        .cancel-link {
+            color: #ff6b6b;
+            text-decoration: underline;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .cancel-link:hover {
+            color: #ff8e8e;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background-color: #333;
+            position: relative;
+            margin-bottom: 10px;
+            display: none;
+        }
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #ff6b6b;
+            position: absolute;
+            transition: width 0.5s;
+        }
+        @media (min-width: 768px) {
+            header {
+                height: 400px;
+            }
+            .header-content {
+                display: flex;
+                justify-content: flex-start;
+            }
+            h1 {
+                text-align: left;
+                font-size: 4rem;
+            }
+            .title-word {
+                display: block;
+            }
+        }
+        @media (min-width: 1024px) {
+            header {
+                height: 512px;
+            }
+            h1 {
+                font-size: 5rem;
+            }
+        }
+		
+        /* Кнопка для открытия модального окна */
+        #openModalBtn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+		.payment-modal {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #1e1e1e;
+			padding: 20px;
+			border-radius: 10px;
+			max-width: 500px;
+			width: 100%;
+			z-index: 1000;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			max-height: 90vh;
+			overflow-y: auto;
+		}
+
+		.payment-modal.active {
+			display: block;
+			opacity: 1;
+		}
+
+        /* Стили для вариантов оплаты */
+        .payment-modal h2, .payment-modal h3 {
+            color: #ffffff;
+        }
+		
+		/* Стили для вариантов оплаты */
+        .payment-modal h4 {
+			font-size: 16px;
+            color: #aaaaaa;
+			font-weight: normal;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Сетка из двух столбцов */
+            gap: 10px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #2b2b2b;
+            border-radius: 5px;
+        }
+
+        .payment-option img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .payment-option div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .payment-option strong {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .payment-option span {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+		.payment-option.disabled {
+			pointer-events: none;
+			opacity: 0.5;
+		}
+        /* Кнопка для закрытия модального окна */
+        #closeModalBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		.payment-option {
+			cursor: pointer;
+		}
+        /* Адаптивная сетка для маленьких экранов */
+        @media (max-width: 600px) {
+            .payment-options {
+                grid-template-columns: 1fr; /* Один столбец на маленьких экранах */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-overlay">
+            <div class="header-content">
+                <h1>
+                    <span class="title-word">Rustex</span>
+                    <span class="title-word">Remake</span>
+                </h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <button class="button" id="buyButton">⠀Купить проходку на збт⠀</button>
+		<button class="button inverted-button" id="downloadLauncher" style="background-color: white; color: #ff6b6b; margin-left: 10px;">Скачать лаунчер</button>
+        <div class="social-buttons">
+            <a href="https://discord.gg/gp4PrYc" class="social-button discord" target="_blank">Discord</a>
+            <a href="https://vk.com/rustexremake" class="social-button vk" target="_blank">ВКонтакте</a>
+            <a href="https://www.youtube.com/@koptokop" class="social-button youtube" target="_blank">YouTube</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Rustex Remake. Все права защищены.</p>
+        <div class="legal-info">
+            <p>Rustex Remake - неофициальный продукт Minecraft, не утверждён Mojang и не связан с Mojang.</p>
+            <p>Rustex Remake - неофициальный продукт Rust, не утверждён Facepunch и не связан с Facepunch.</p>
+            <p>ИП Короленко Александр Александрович ИНН: 262103339160 OГPНИП: 324265100099103</p>
+        </div>
+        <p>
+            <a href="eula.pdf">Пользовательское соглашение</a> |
+            <a href="privacy_policy.pdf">Политика конфиденциальности</a> |
+			<a href="rules.html">Правила проекта</a>
+        </p>
+    </footer>
+	<div id="vk_community_messages"></div>
+    <!-- Модальное окно -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <div class="progress-bar"><div class="progress"></div></div>
+            <h2>ИТОГО: <span class="price">600.00 ₽</span></h2>
+            <hr>
+            <p>Для покупки товара заполните форму.</p>
+            
+            <form id="buyForm">
+                <div class="form-group">
+                    <input type="text" id="nickname" name="nickname" placeholder="Никнейм" required="" pattern="[a-zA-Z0-9_]{3,16}" title="От 3 до 16 символов: буквы, цифры и подчеркивания" maxlength="16">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="promo" name="promo" placeholder="Промокод, если есть" pattern="[A-Z0-9]{0,16}" title="До 16 символов: только заглавные буквы и цифры" maxlength="16">
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" checked="" required="">
+                    <label for="agree">Я принимаю условия <a href="eula.pdf" target="_blank" class="red-link">пользовательского соглашения</a>, <a href="privacy_policy.pdf" target="_blank" class="red-link">политики конфиденциальности</a> и <a href="rules.html" target="_blank" class="red-link">правил проекта</a></label>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="buy-button">Купить</button>
+                    <a href="#" class="cancel-link" id="cancelBuy">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+	<div class="payment-modal" id="modalWindow">
+		<h2>Оплата</h2>
+		<h4>Выберите предпочитаемый способ оплаты:</h4>
+
+		<h3>Россия</h3>
+		<div class="payment-options">
+			<div class="payment-option" data-payment="russia">
+				<img src="banks/sbp.svg" alt="СБП">
+				<div>
+					<strong>СБП</strong>
+					<span>РОССИЯ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="russia">
+				<img src="banks/mir.svg" alt="МИР">
+				<div>
+					<strong>МИР</strong>
+					<span>РОССИЯ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="russia">
+				<img src="banks/visa.svg" alt="Visa">
+				<div>
+					<strong>Visa</strong>
+					<span>РОССИЯ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="russia">
+				<img src="banks/mastercard.svg" alt="MasterCard">
+				<div>
+					<strong>MasterCard</strong>
+					<span>РОССИЯ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="russia">
+				<img src="banks/tbank.svg" alt="T-Bank">
+				<div>
+					<strong>T-Bank</strong>
+					<span>РОССИЯ</span>
+				</div>
+			</div>
+		</div>
+
+		<h3>Другие страны</h3>
+		<div class="payment-options">
+			<div class="payment-option" data-payment="global">
+				<img src="banks/visa.svg" alt="Visa">
+				<div>
+					<strong>Visa</strong>
+					<span>ДРУГИЕ СТРАНЫ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="global">
+				<img src="banks/mastercard.svg" alt="MasterCard">
+				<div>
+					<strong>MasterCard</strong>
+					<span>ДРУГИЕ СТРАНЫ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="global">
+				<img src="banks/card.svg" alt="Другие карты">
+				<div>
+					<strong>Другие карты</strong>
+					<span>ДРУГИЕ СТРАНЫ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="paypal">
+				<img src="banks/paypal.svg" alt="PayPal">
+				<div>
+					<strong>PayPal 10€</strong>
+					<span>ДРУГИЕ СТРАНЫ</span>
+				</div>
+			</div>
+			<div class="payment-option" data-payment="paypal">
+				<img src="banks/stripe.svg" alt="Stripe">
+				<div>
+					<strong>Stripe 10€</strong>
+					<span>ДРУГИЕ СТРАНЫ</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Кнопка для закрытия модального окна -->
+		<button id="closeModalBtn">Закрыть</button>
+	</div>
+
+    <script>
+        function checkLanguageAndRedirect() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang !== "ru" && userLang !== "ru-RU") {
+                window.location.href = "/en"; // Укажите здесь URL для англоязычной версии
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", checkLanguageAndRedirect);
+        // Обработка кликов на вариантах оплаты
+        var paymentOptions = document.querySelectorAll('.payment-option');
+        paymentOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                var paymentMethod = this.getAttribute('data-payment');
+                //alert('Вы выбрали: ' + paymentMethod); // В данном случае просто показывается уведомление
+
+				// Отключаем кнопку
+				document.querySelectorAll('.payment-option').forEach(option => option.classList.add('disabled'));
+				document.getElementById("closeModalBtn").disabled = true;
+				
+				// Получаем значение поля "nickname"
+				var nickname = document.getElementById('nickname').value;
+				
+				var promo = document.getElementById('promo').value;
+				
+				let timeoutId;
+				let progressBarTimeoutId;
+				let updateProgressInterval;
+				const startTime = Date.now();
+				
+				function checkNickname(nickname) {
+					return new Promise((resolve, reject) => {
+					$.ajax({
+						url: 'check_nickname.php',
+						method: 'POST',
+						data: { nickname: nickname },
+						dataType: 'json',
+						success: function(response) {
+							console.log('Server response:', response);  // Добавим логирование
+							if (response && typeof response.success !== 'undefined') {
+								resolve(response);
+							} else {
+								reject(new Error('Некорректный ответ сервера'));
+							}
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							console.error('AJAX error:', textStatus, errorThrown);
+							console.log('Response Text:', jqXHR.responseText);
+							reject(new Error('Ошибка при проверке никнейма: ' + textStatus));
+						}
+					});
+				});
+				
+				return new Promise((resolve, reject) => {
+					// Заглушка вместо AJAX запроса
+					setTimeout(function() {
+						// Заглушка: допустим, что никнейм всегда свободен
+						resolve({ success: true });
+					}, 100);
+				});
+				}
+				
+				const checkNicknameWithTimeout = new Promise((resolve, reject) => {
+					checkNickname(nickname)
+						.then(resolve)
+						.catch(reject);
+					
+					timeoutId = setTimeout(() => {
+						reject(new Error('Превышено время ожидания'));
+					}, 60000);
+					
+					// Показываем прогресс-бар через 5 секунд
+					progressBarTimeoutId = setTimeout(() => {
+						$('.progress-bar').show();
+						updateProgressBar(0);
+						
+						// Начинаем обновлять прогресс-бар
+						updateProgressInterval = setInterval(() => {
+							const elapsedTime = Date.now() - startTime - 5000; // Вычитаем 5 секунд задержки
+							const progress = Math.min(elapsedTime / 550, 100);
+							updateProgressBar(progress);
+						}, 50);
+					}, 5000);
+				});
+				
+				checkNicknameWithTimeout
+					.then(response => {
+						clearTimeout(timeoutId);
+						clearTimeout(progressBarTimeoutId);
+						clearInterval(updateProgressInterval);
+						
+						console.log('Nickname check response:', response);
+
+						if (response.success) {
+							if (paymentMethod === "russia") {
+								// Никнейм свободен, продолжаем с оплатой
+								return $.ajax({
+									url: 'init_payment.php',
+									method: 'POST',
+									data: $('#buyForm').serialize(),
+									dataType: 'json'
+								});
+								// Заглушка вместо инициализации платежа
+								<!-- return new Promise((resolve) => { -->
+									<!-- setTimeout(function() { -->
+										<!-- resolve({ success: true, paymentUrl: '/payment-success' }); -->
+									<!-- }, 100); -->
+								<!-- }); -->
+							}
+							else if (paymentMethod === "paypal") {
+								// Заглушка вместо инициализации платежа
+								return new Promise((resolve) => {
+									setTimeout(function() {
+										resolve({ success: true, paymentUrl: 'https://rustexremake.craftingstore.net/package/748528' });
+									}, 500);
+								});
+							}
+							else
+							{
+								<!-- // Никнейм свободен, продолжаем с оплатой -->
+								return $.ajax({
+									url: 'easy_process.php',
+									method: 'POST',
+									data: $('#buyForm').serialize(),
+									dataType: 'json'
+								});
+								
+								// Заглушка вместо инициализации платежа
+								<!-- return new Promise((resolve) => { -->
+									<!-- setTimeout(function() { -->
+										<!-- resolve({ success: true, paymentUrl: 'https://rustexremake.craftingstore.net/package/748528' }); -->
+									<!-- }, 500); -->
+								<!-- }); -->
+								
+								// Заглушка вместо инициализации платежа
+								<!-- return new Promise((resolve) => { -->
+									<!-- setTimeout(function() { -->
+										<!-- resolve({ success: true, paymentUrl: '/payment-success2' }); -->
+									<!-- }, 5000); -->
+								<!-- }); -->
+							}
+
+						} else {
+							throw new Error(response.message || 'Неизвестная ошибка при проверке никнейма');
+						}
+					})
+					.then(response => {
+						console.log('Payment init response:', response);
+						if (response && response.success) {
+							window.location.href = response.paymentUrl;
+						} else {
+							throw new Error(response.message || 'Неизвестная ошибка при инициализации платежа');
+						}
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						alert('Ошибка: ' + error.message);
+					})
+					.finally(() => {
+						// Включаем кнопку и скрываем прогресс-бар
+						document.querySelectorAll('.payment-option').forEach(option => option.classList.remove('disabled'));
+						document.getElementById("closeModalBtn").disabled = false;
+						$('.progress-bar').hide();
+						$('.progress').css('width', '0%');
+					});
+
+            });
+        });
+	    // Закрыть модальное окно
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            var modal = document.getElementById('modalWindow');
+            modal.classList.remove('active');
+            setTimeout(function() {
+                modal.style.display = 'none';
+            }, 300); // Время совпадает с transition (0.3 секунды)
+        });
+	
+        var modal = document.getElementById("buyModal");
+        var btn = document.getElementById("buyButton");
+        var cancelBtn = document.getElementById("cancelBuy");
+        var nicknameField = document.getElementById("nickname");
+
+        function openModal() {
+			modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        btn.onclick = openModal;
+
+        cancelBtn.onclick = function(e) {
+            e.preventDefault();
+            closeModal();
+        }
+
+        // Получаем параметры URL
+        var params = new URLSearchParams(window.location.search);
+        var nickname = params.get('nickname');
+
+        if (nickname) {
+            nicknameField.value = nickname;
+            openModal();
+        }
+
+        $(document).ready(function() {
+            // Преобразование промокода в верхний регистр при вводе
+            $('#promo').on('input', function() {
+                this.value = this.value.toUpperCase();
+                updatePrice();
+            });
+
+            // Валидация никнейма
+            $('#nickname').on('input', function() {
+                this.value = this.value.replace(/[^a-zA-Z0-9_]/g, '');
+                if (this.value.length > 16) {
+                    this.value = this.value.slice(0, 16);
+                }
+            });
+
+			function updatePrice() {
+                var nickname = $('#nickname').val();
+                var promo = $('#promo').val();
+                
+                $.ajax({
+                    url: 'check_promo.php',
+                    method: 'POST',
+                    data: { nickname: nickname, promo: promo },
+                    success: function(response) {
+                        $('.price').text(response + ' ₽');
+                    }
+                });
+				
+				// Заглушка вместо AJAX запроса
+				<!-- setTimeout(function() { -->
+					<!-- $('.price').text('1000 ₽'); // Заглушка: цена по умолчанию -->
+				<!-- }, 100); -->
+            }
+
+
+
+			$('#buyForm').submit(function(e) {
+				e.preventDefault();
+				
+				var nickname = $('#nickname').val();
+				var promo = $('#promo').val();
+				
+				if (!/^[a-zA-Z0-9_]{3,16}$/.test(nickname)) {
+					alert('Никнейм должен содержать от 3 до 16 символов: буквы, цифры и подчеркивания');
+					return;
+				}
+				
+				if (promo && !/^[A-Z0-9]{1,16}$/.test(promo)) {
+					alert('Промокод должен содержать до 16 символов: только заглавные буквы и цифры');
+					return;
+				}
+				
+				var modal1 = document.getElementById('modalWindow');
+				modal1.style.display = 'block';
+				setTimeout(function() {
+					modal1.classList.add('active');
+				}, 10); // Немного времени для работы анимации
+			});
+
+			function updateProgressBar(progress) {
+				$('.progress').css('width', progress + '%');
+			}
+        });
+		
+		$(document).ready(function() {
+			function equalizeButtonWidths() {
+				var buyButton = $('#buyButton');
+				var downloadButton = $('#downloadLauncher');
+				var maxWidth = Math.max(buyButton.outerWidth(), downloadButton.outerWidth());
+				
+				buyButton.width(maxWidth-60);
+				downloadButton.width(maxWidth-60);
+			}
+
+			// Вызов функции для выравнивания ширины при загрузке
+			equalizeButtonWidths();
+
+			// Вызов функции при изменении размера окна
+			$(window).resize(equalizeButtonWidths);
+		});
+		document.getElementById('downloadLauncher').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'https://aa68edc5-a17f-477a-b392-efce94672945.selcdn.net/Launcher_Installer_v15.x64.exe';  // Укажите путь к вашему файлу
+            link.download = 'Launcher_Installer_v15.x64.exe';   // Укажите имя файла, которое будет скачано
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+	<script type="text/javascript">
+	VK.Widgets.CommunityMessages("vk_community_messages", 168352646);
+	</script>
+</body>
+</html>
