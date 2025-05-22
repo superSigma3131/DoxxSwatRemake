@@ -1,0 +1,80 @@
+Uri: https://challenges.cloudflare.com/turnstile/v0/g/6fab0cec561d/api.js
+File Name: C:\Downloaded Web Sites\rustexremake.org\turnstile\v0\g\6fab0cec561d\api.js
+Content Type: application/javascript
+
+Uri: https://code.jquery.com/jquery-3.6.0.min.js
+File Name: C:\Downloaded Web Sites\rustexremake.org\jquery-3.6.0.min.js
+Content Type: application/javascript
+
+Uri: https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap
+File Name: C:\Downloaded Web Sites\rustexremake.org\css2
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf
+File Name: C:\Downloaded Web Sites\rustexremake.org\s\roboto\v47\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf
+File Name: C:\Downloaded Web Sites\rustexremake.org\s\roboto\v47\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf
+Content Type: font/ttf
+
+Uri: https://mc.yandex.ru/watch/97821313
+File Name: C:\Downloaded Web Sites\rustexremake.org\watch\97821313
+Content Type: image/gif
+
+Uri: https://rustexremake.org/
+File Name: C:\Downloaded Web Sites\rustexremake.org\index.htm
+Content Type: text/html
+
+Uri: https://rustexremake.org/background.png
+File Name: C:\Downloaded Web Sites\rustexremake.org\background.png
+Content Type: image/png
+
+Uri: https://rustexremake.org/banks/card.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\card.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/mastercard.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\mastercard.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/mir.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\mir.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/paypal.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\paypal.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/sbp.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\sbp.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/stripe.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\stripe.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/tbank.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\tbank.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/banks/visa.svg
+File Name: C:\Downloaded Web Sites\rustexremake.org\banks\visa.svg
+Content Type: image/svg+xml
+
+Uri: https://rustexremake.org/eula.pdf
+File Name: C:\Downloaded Web Sites\rustexremake.org\eula.pdf
+Content Type: application/pdf
+
+Uri: https://rustexremake.org/favicon.png
+File Name: C:\Downloaded Web Sites\rustexremake.org\favicon.png
+Content Type: image/png
+
+Uri: https://rustexremake.org/privacy_policy.pdf
+File Name: C:\Downloaded Web Sites\rustexremake.org\privacy_policy.pdf
+Content Type: application/pdf
+
+Uri: https://rustexremake.org/rules
+File Name: C:\Downloaded Web Sites\rustexremake.org\rules.html
+Content Type: text/html
+
